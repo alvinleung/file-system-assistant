@@ -1,0 +1,194 @@
+{
+  "name": "",
+  "isDirectory": true,
+  "children": [
+    {
+      "name": "2023",
+      "isDirectory": true,
+      "children": [
+        {
+          "name": "Project Alpha",
+          "isDirectory": true,
+          "children": [
+            {
+              "name": "Campaigns",
+              "isDirectory": true,
+              "children": [
+                {
+                  "name": "SocialMediaPlan.txt",
+                  "isDirectory": false,
+                  "content": "Outline for social media strategy for Project Alpha 2023."
+                },
+                {
+                  "name": "EmailCampaign.docx",
+                  "isDirectory": false,
+                  "content": "Content for email marketing campaign in Project Alpha 2023."
+                }
+              ]
+            },
+            {
+              "name": "Assets",
+              "isDirectory": true,
+              "children": [
+                {
+                  "name": "Logo.png",
+                  "isDirectory": false,
+                  "content": "base64encodedlogoimage=="
+                },
+                {
+                  "name": "Banner.jpg",
+                  "isDirectory": false,
+                  "content": "base64encodedbannerimage=="
+                }
+              ]
+            },
+            {
+              "name": "Reports",
+              "isDirectory": true,
+              "children": [
+                {
+                  "name": "Q1_Report.pdf",
+                  "isDirectory": false,
+                  "content": "PDF data summarizing Q1 performance of Project Alpha."
+                },
+                {
+                  "name": "Q2_Report.pdf",
+                  "isDirectory": false,
+                  "content": "PDF data summarizing Q2 performance of Project Alpha."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Project Beta",
+          "isDirectory": true,
+          "children": [
+            {
+              "name": "Campaigns",
+              "isDirectory": true,
+              "children": [
+                {
+                  "name": "LaunchPlan.txt",
+                  "isDirectory": false,
+                  "content": "Detailed launch plan for Project Beta 2023."
+                }
+              ]
+            },
+            {
+              "name": "Assets",
+              "isDirectory": true,
+              "children": [
+                {
+                  "name": "ProductImage.png",
+                  "isDirectory": false,
+                  "content": "base64encodedproductimage=="
+                }
+              ]
+            },
+            {
+              "name": "Reports",
+              "isDirectory": true,
+              "children": [
+                {
+                  "name": "AnnualSummary.pdf",
+                  "isDirectory": false,
+                  "content": "PDF report summarizing the annual performance for Project Beta 2023."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2024",
+      "isDirectory": true,
+      "children": [
+        {
+          "name": "Project Gamma",
+          "isDirectory": true,
+          "children": [
+            {
+              "name": "Campaigns",
+              "isDirectory": true,
+              "children": [
+                {
+                  "name": "DigitalAdPlan.txt",
+                  "isDirectory": false,
+                  "content": "Plan for digital ad campaigns for Project Gamma 2024."
+                },
+                {
+                  "name": "SEO_Strategy.txt",
+                  "isDirectory": false,
+                  "content": "SEO strategy and keyword plan for Project Gamma 2024."
+                }
+              ]
+            },
+            {
+              "name": "Assets",
+              "isDirectory": true,
+              "children": [
+                {
+                  "name": "BrandLogo.svg",
+                  "isDirectory": false,
+                  "content": "SVG data for Project Gamma brand logo."
+                }
+              ]
+            },
+            {
+              "name": "Reports",
+              "isDirectory": true,
+              "children": [
+                {
+                  "name": "MidYearReview.pdf",
+                  "isDirectory": false,
+                  "content": "Mid-year performance review for Project Gamma 2024."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Project Delta",
+          "isDirectory": true,
+          "children": [
+            {
+              "name": "Campaigns",
+              "isDirectory": true,
+              "children": [
+                {
+                  "name": "ContentCalendar.xlsx",
+                  "isDirectory": false,
+                  "content": "Spreadsheet data for content planning in Project Delta 2024."
+                }
+              ]
+            },
+            {
+              "name": "Assets",
+              "isDirectory": true,
+              "children": [
+                {
+                  "name": "PromoVideo.mp4",
+                  "isDirectory": false,
+                  "content": "Base64 or binary data for a promotional video for Project Delta."
+                }
+              ]
+            },
+            {
+              "name": "Reports",
+              "isDirectory": true,
+              "children": [
+                {
+                  "name": "Final_Report.pdf",
+                  "isDirectory": false,
+                  "content": "Final project report summarizing all efforts for Project Delta 2024."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
