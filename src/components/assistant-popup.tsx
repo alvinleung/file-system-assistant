@@ -103,7 +103,7 @@ const AssistantPopUp = ({
       {shouldShowPopup && lastClickedIndex !== null && (
         <div
           className={cn(
-            "relative min-h-10 border rounded-sm px-1 bg-white ",
+            "relative min-h-10 border rounded-lg px-2 bg-white ",
             isPromptEmpty ? "border-transparent" : "border-zinc-200 shadow-xs"
           )}
           style={{
@@ -116,12 +116,12 @@ const AssistantPopUp = ({
           }}
         >
           {!isPromptEmpty && (
-            <div className="flex flex-row text-xs py-1 gap-1">
+            <div className="flex flex-row text-xs py-2 gap-2">
               {mapSet(selectedFiles, (filePath, index) => {
                 return (
                   <span
                     key={index}
-                    className="bg-zinc-50 px-1 border border-zinc-200 rounded-xs text-zinc-600"
+                    className="bg-zinc-50 px-1 py-0.5 border border-zinc-200 rounded-sm text-zinc-600"
                   >
                     {extractFileName(filePath)}
                   </span>
@@ -130,13 +130,17 @@ const AssistantPopUp = ({
             </div>
           )}
           <AutoResizingTextarea
-            placeholder="Do something with the files.."
+            placeholder="Do something with the files..."
             onChange={setUserQuery}
             onSubmit={handleSubmit}
             ref={textareaRef}
             value={userQuery}
           />
-          <div className="w-full">{assistantResponse}</div>
+          {assistantResponse && (
+            <div className="w-full px-1 py-1 text-sm text-zinc-700 border-t border-zinc-200">
+              {assistantResponse}
+            </div>
+          )}
         </div>
       )}
     </div>
