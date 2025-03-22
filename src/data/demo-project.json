@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "ProjectRoot",
   "isDirectory": true,
   "children": [
     {
@@ -11,50 +11,254 @@
           "isDirectory": true,
           "children": [
             {
-              "name": "Campaigns",
+              "name": "Planning",
               "isDirectory": true,
               "children": [
                 {
-                  "name": "SocialMediaPlan.txt",
+                  "name": "Roadmap.pdf",
                   "isDirectory": false,
-                  "content": "Outline for social media strategy for Project Alpha 2023."
+                  "content": "Strategic roadmap for Project Alpha 2023."
                 },
                 {
-                  "name": "EmailCampaign.docx",
+                  "name": "Budget.xlsx",
                   "isDirectory": false,
-                  "content": "Content for email marketing campaign in Project Alpha 2023."
+                  "content": "Budget allocation spreadsheet for Project Alpha 2023."
+                },
+                {
+                  "name": "Timeline.xlsx",
+                  "isDirectory": false,
+                  "content": "Detailed timeline with milestones and deadlines."
+                },
+                {
+                  "name": "Resources.docx",
+                  "isDirectory": false,
+                  "content": "Resource allocation and team assignments."
+                },
+                {
+                  "name": "StakeholderAnalysis.pptx",
+                  "isDirectory": false,
+                  "content": "Analysis of project stakeholders and communication plan."
                 }
               ]
             },
             {
-              "name": "Assets",
+              "name": "Design",
               "isDirectory": true,
               "children": [
                 {
-                  "name": "Logo.png",
-                  "isDirectory": false,
-                  "content": "base64encodedlogoimage=="
+                  "name": "Mockups",
+                  "isDirectory": true,
+                  "children": [
+                    {
+                      "name": "UI_Mockup_v1.sketch",
+                      "isDirectory": false,
+                      "content": "Initial UI design mockups."
+                    },
+                    {
+                      "name": "UI_Mockup_v2.sketch",
+                      "isDirectory": false,
+                      "content": "Revised UI design mockups."
+                    },
+                    {
+                      "name": "UI_Mockup_Final.sketch",
+                      "isDirectory": false,
+                      "content": "Finalized UI design mockups."
+                    }
+                  ]
                 },
                 {
-                  "name": "Banner.jpg",
-                  "isDirectory": false,
-                  "content": "base64encodedbannerimage=="
+                  "name": "Architecture",
+                  "isDirectory": true,
+                  "children": [
+                    {
+                      "name": "SystemArchitecture.drawio",
+                      "isDirectory": false,
+                      "content": "System architecture diagram."
+                    },
+                    {
+                      "name": "DatabaseSchema.sql",
+                      "isDirectory": false,
+                      "content": "Database schema definitions."
+                    },
+                    {
+                      "name": "APISpecs.yaml",
+                      "isDirectory": false,
+                      "content": "API specifications in YAML format."
+                    }
+                  ]
+                },
+                {
+                  "name": "Assets",
+                  "isDirectory": true,
+                  "children": [
+                    {
+                      "name": "Images",
+                      "isDirectory": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Fonts",
+                      "isDirectory": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Icons",
+                      "isDirectory": true,
+                      "children": []
+                    }
+                  ]
                 }
               ]
             },
             {
-              "name": "Reports",
+              "name": "Development",
               "isDirectory": true,
               "children": [
                 {
-                  "name": "Q1_Report.pdf",
-                  "isDirectory": false,
-                  "content": "PDF data summarizing Q1 performance of Project Alpha."
+                  "name": "Frontend",
+                  "isDirectory": true,
+                  "children": [
+                    {
+                      "name": "src",
+                      "isDirectory": true,
+                      "children": []
+                    },
+                    {
+                      "name": "tests",
+                      "isDirectory": true,
+                      "children": []
+                    },
+                    {
+                      "name": "package.json",
+                      "isDirectory": false,
+                      "content": "NPM package configuration."
+                    },
+                    {
+                      "name": "README.md",
+                      "isDirectory": false,
+                      "content": "Frontend documentation."
+                    }
+                  ]
                 },
                 {
-                  "name": "Q2_Report.pdf",
+                  "name": "Backend",
+                  "isDirectory": true,
+                  "children": [
+                    {
+                      "name": "src",
+                      "isDirectory": true,
+                      "children": []
+                    },
+                    {
+                      "name": "tests",
+                      "isDirectory": true,
+                      "children": []
+                    },
+                    {
+                      "name": "requirements.txt",
+                      "isDirectory": false,
+                      "content": "Python dependencies."
+                    },
+                    {
+                      "name": "README.md",
+                      "isDirectory": false,
+                      "content": "Backend documentation."
+                    }
+                  ]
+                },
+                {
+                  "name": "Infrastructure",
+                  "isDirectory": true,
+                  "children": [
+                    {
+                      "name": "Docker",
+                      "isDirectory": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Kubernetes",
+                      "isDirectory": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Terraform",
+                      "isDirectory": true,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Testing",
+              "isDirectory": true,
+              "children": [
+                {
+                  "name": "TestPlans",
+                  "isDirectory": true,
+                  "children": []
+                },
+                {
+                  "name": "TestCases",
+                  "isDirectory": true,
+                  "children": []
+                },
+                {
+                  "name": "TestData",
+                  "isDirectory": true,
+                  "children": []
+                },
+                {
+                  "name": "TestReports",
+                  "isDirectory": true,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "Deployment",
+              "isDirectory": true,
+              "children": [
+                {
+                  "name": "Staging",
+                  "isDirectory": true,
+                  "children": []
+                },
+                {
+                  "name": "Production",
+                  "isDirectory": true,
+                  "children": []
+                },
+                {
+                  "name": "ReleaseNotes",
+                  "isDirectory": true,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "Documentation",
+              "isDirectory": true,
+              "children": [
+                {
+                  "name": "UserManual.pdf",
                   "isDirectory": false,
-                  "content": "PDF data summarizing Q2 performance of Project Alpha."
+                  "content": "End-user documentation."
+                },
+                {
+                  "name": "APIReference.md",
+                  "isDirectory": false,
+                  "content": "API documentation."
+                },
+                {
+                  "name": "DevGuide.md",
+                  "isDirectory": false,
+                  "content": "Developer guide."
+                },
+                {
+                  "name": "Maintenance.md",
+                  "isDirectory": false,
+                  "content": "System maintenance procedures."
                 }
               ]
             }
@@ -65,39 +269,26 @@
           "isDirectory": true,
           "children": [
             {
-              "name": "Campaigns",
+              "name": "Planning",
               "isDirectory": true,
-              "children": [
-                {
-                  "name": "LaunchPlan.txt",
-                  "isDirectory": false,
-                  "content": "Detailed launch plan for Project Beta 2023."
-                }
-              ]
+              "children": []
             },
             {
-              "name": "Assets",
+              "name": "Design",
               "isDirectory": true,
-              "children": [
-                {
-                  "name": "ProductImage.png",
-                  "isDirectory": false,
-                  "content": "base64encodedproductimage=="
-                }
-              ]
+              "children": []
             },
             {
-              "name": "Reports",
+              "name": "Development",
               "isDirectory": true,
-              "children": [
-                {
-                  "name": "AnnualSummary.pdf",
-                  "isDirectory": false,
-                  "content": "PDF report summarizing the annual performance for Project Beta 2023."
-                }
-              ]
+              "children": []
             }
           ]
+        },
+        {
+          "name": "Project Gamma",
+          "isDirectory": true,
+          "children": []
         }
       ]
     },
@@ -106,87 +297,379 @@
       "isDirectory": true,
       "children": [
         {
-          "name": "Project Gamma",
+          "name": "Project Delta",
           "isDirectory": true,
           "children": [
             {
-              "name": "Campaigns",
+              "name": "Planning",
               "isDirectory": true,
               "children": [
                 {
-                  "name": "DigitalAdPlan.txt",
+                  "name": "Roadmap.pdf",
                   "isDirectory": false,
-                  "content": "Plan for digital ad campaigns for Project Gamma 2024."
+                  "content": "Strategic roadmap for Project Delta 2024."
                 },
                 {
-                  "name": "SEO_Strategy.txt",
+                  "name": "Budget.xlsx",
                   "isDirectory": false,
-                  "content": "SEO strategy and keyword plan for Project Gamma 2024."
+                  "content": "Budget allocation spreadsheet for Project Delta 2024."
                 }
               ]
             },
             {
-              "name": "Assets",
+              "name": "Research",
               "isDirectory": true,
               "children": [
                 {
-                  "name": "BrandLogo.svg",
+                  "name": "MarketAnalysis.pptx",
                   "isDirectory": false,
-                  "content": "SVG data for Project Gamma brand logo."
+                  "content": "Market research and competitor analysis."
+                },
+                {
+                  "name": "UserInterviews",
+                  "isDirectory": true,
+                  "children": [
+                    {
+                      "name": "Interview1.mp4",
+                      "isDirectory": false,
+                      "content": "Recording of user interview session 1."
+                    },
+                    {
+                      "name": "Interview2.mp4",
+                      "isDirectory": false,
+                      "content": "Recording of user interview session 2."
+                    },
+                    {
+                      "name": "InterviewSummary.docx",
+                      "isDirectory": false,
+                      "content": "Summary and analysis of user interviews."
+                    }
+                  ]
+                },
+                {
+                  "name": "PrototypeResults",
+                  "isDirectory": true,
+                  "children": []
                 }
               ]
             },
             {
-              "name": "Reports",
+              "name": "Design",
               "isDirectory": true,
               "children": [
                 {
-                  "name": "MidYearReview.pdf",
-                  "isDirectory": false,
-                  "content": "Mid-year performance review for Project Gamma 2024."
+                  "name": "Mockups",
+                  "isDirectory": true,
+                  "children": []
+                },
+                {
+                  "name": "Architecture",
+                  "isDirectory": true,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "Development",
+              "isDirectory": true,
+              "children": [
+                {
+                  "name": "Frontend",
+                  "isDirectory": true,
+                  "children": []
+                },
+                {
+                  "name": "Backend",
+                  "isDirectory": true,
+                  "children": []
+                },
+                {
+                  "name": "Mobile",
+                  "isDirectory": true,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "QA",
+              "isDirectory": true,
+              "children": [
+                {
+                  "name": "AutomationScripts",
+                  "isDirectory": true,
+                  "children": []
+                },
+                {
+                  "name": "PerformanceTests",
+                  "isDirectory": true,
+                  "children": []
+                },
+                {
+                  "name": "SecurityTests",
+                  "isDirectory": true,
+                  "children": []
+                },
+                {
+                  "name": "TestReports",
+                  "isDirectory": true,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "Deployment",
+              "isDirectory": true,
+              "children": [
+                {
+                  "name": "CI_CD",
+                  "isDirectory": true,
+                  "children": []
+                },
+                {
+                  "name": "Monitoring",
+                  "isDirectory": true,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "Marketing",
+              "isDirectory": true,
+              "children": [
+                {
+                  "name": "CampaignAssets",
+                  "isDirectory": true,
+                  "children": []
+                },
+                {
+                  "name": "PressReleases",
+                  "isDirectory": true,
+                  "children": []
+                },
+                {
+                  "name": "Analytics",
+                  "isDirectory": true,
+                  "children": []
                 }
               ]
             }
           ]
         },
         {
-          "name": "Project Delta",
+          "name": "Project Epsilon",
+          "isDirectory": true,
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Shared Resources",
+      "isDirectory": true,
+      "children": [
+        {
+          "name": "Templates",
           "isDirectory": true,
           "children": [
             {
-              "name": "Campaigns",
+              "name": "DocumentTemplates",
               "isDirectory": true,
-              "children": [
-                {
-                  "name": "ContentCalendar.xlsx",
-                  "isDirectory": false,
-                  "content": "Spreadsheet data for content planning in Project Delta 2024."
-                }
-              ]
+              "children": []
             },
             {
-              "name": "Assets",
+              "name": "CodeTemplates",
               "isDirectory": true,
-              "children": [
-                {
-                  "name": "PromoVideo.mp4",
-                  "isDirectory": false,
-                  "content": "Base64 or binary data for a promotional video for Project Delta."
-                }
-              ]
+              "children": []
             },
             {
-              "name": "Reports",
+              "name": "PresentationTemplates",
               "isDirectory": true,
-              "children": [
-                {
-                  "name": "Final_Report.pdf",
-                  "isDirectory": false,
-                  "content": "Final project report summarizing all efforts for Project Delta 2024."
-                }
-              ]
+              "children": []
             }
           ]
+        },
+        {
+          "name": "Libraries",
+          "isDirectory": true,
+          "children": [
+            {
+              "name": "UIComponents",
+              "isDirectory": true,
+              "children": []
+            },
+            {
+              "name": "Utilities",
+              "isDirectory": true,
+              "children": []
+            },
+            {
+              "name": "ThirdParty",
+              "isDirectory": true,
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Standards",
+          "isDirectory": true,
+          "children": [
+            {
+              "name": "CodingStandards.md",
+              "isDirectory": false,
+              "content": "Coding style guides and standards."
+            },
+            {
+              "name": "DesignPatterns.md",
+              "isDirectory": false,
+              "content": "Recommended design patterns."
+            },
+            {
+              "name": "SecurityGuidelines.md",
+              "isDirectory": false,
+              "content": "Security best practices."
+            },
+            {
+              "name": "AccessibilityStandards.md",
+              "isDirectory": false,
+              "content": "Accessibility requirements and guidelines."
+            }
+          ]
+        },
+        {
+          "name": "Training",
+          "isDirectory": true,
+          "children": [
+            {
+              "name": "Onboarding",
+              "isDirectory": true,
+              "children": []
+            },
+            {
+              "name": "TechnicalTraining",
+              "isDirectory": true,
+              "children": []
+            },
+            {
+              "name": "Certifications",
+              "isDirectory": true,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Management",
+      "isDirectory": true,
+      "children": [
+        {
+          "name": "HR",
+          "isDirectory": true,
+          "children": [
+            {
+              "name": "TeamStructure.xlsx",
+              "isDirectory": false,
+              "content": "Team organization charts."
+            },
+            {
+              "name": "SkillMatrix.xlsx",
+              "isDirectory": false,
+              "content": "Skills inventory for team members."
+            },
+            {
+              "name": "PerformanceReviews",
+              "isDirectory": true,
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Finance",
+          "isDirectory": true,
+          "children": [
+            {
+              "name": "Budgets",
+              "isDirectory": true,
+              "children": []
+            },
+            {
+              "name": "Expenses",
+              "isDirectory": true,
+              "children": []
+            },
+            {
+              "name": "Forecasts",
+              "isDirectory": true,
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Meetings",
+          "isDirectory": true,
+          "children": [
+            {
+              "name": "AgendaTemplates",
+              "isDirectory": true,
+              "children": []
+            },
+            {
+              "name": "MinutesArchive",
+              "isDirectory": true,
+              "children": []
+            },
+            {
+              "name": "ActionItems",
+              "isDirectory": true,
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Reports",
+          "isDirectory": true,
+          "children": [
+            {
+              "name": "WeeklyStatus",
+              "isDirectory": true,
+              "children": []
+            },
+            {
+              "name": "MonthlyReviews",
+              "isDirectory": true,
+              "children": []
+            },
+            {
+              "name": "QuarterlyReports",
+              "isDirectory": true,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Legal",
+      "isDirectory": true,
+      "children": [
+        {
+          "name": "Contracts",
+          "isDirectory": true,
+          "children": []
+        },
+        {
+          "name": "Compliance",
+          "isDirectory": true,
+          "children": []
+        },
+        {
+          "name": "Licenses",
+          "isDirectory": true,
+          "children": []
+        },
+        {
+          "name": "Privacy",
+          "isDirectory": true,
+          "children": []
         }
       ]
     }

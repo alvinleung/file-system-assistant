@@ -22,7 +22,7 @@ export type AdalineTool = {
   };
 };
 
-export function convertAdalineToolToOpenAI(
+function convertAdalineToolToOpenAI(
   adalineTool: AdalineTool
 ): ChatCompletionTool {
   // Mapping the AdalineTool to OpenAI format
