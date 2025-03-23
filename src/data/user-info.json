@@ -1,0 +1,131 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "name": "John Smith",
+      "email": "john.smith@example.com",
+      "slack": "@johnsmith",
+      "department": "Marketing",
+      "type": "internal"
+    },
+    {
+      "id": 2,
+      "name": "Emily Johnson",
+      "email": "emily.johnson@example.com",
+      "slack": "@emilyjohnson",
+      "department": "Sales",
+      "company": "Global Enterprises",
+      "type": "external"
+    },
+    {
+      "id": 3,
+      "name": "Michael Wong",
+      "email": "michael.wong@example.com",
+      "slack": "@michaelwong",
+      "department": "Engineering",
+      "company": "Tech Innovations",
+      "type": "external"
+    },
+    {
+      "id": 4,
+      "name": "Sarah Martinez",
+      "email": "sarah.martinez@example.com",
+      "slack": "@sarahmartinez",
+      "department": "Design",
+      "type": "internal"
+    },
+    {
+      "id": 5,
+      "name": "David Kim",
+      "email": "david.kim@example.com",
+      "slack": "@davidkim",
+      "department": "Product",
+      "company": "Future Systems",
+      "type": "external"
+    },
+    {
+      "id": 6,
+      "name": "Taha Hossain",
+      "email": "taha@daybreak.studio",
+      "slack": "@tahahossain",
+      "department": "Operations",
+      "type": "internal"
+    },
+    {
+      "id": 7,
+      "name": "Lisa Chang",
+      "email": "lisa.chang@example.com",
+      "slack": "@lisachang",
+      "department": "HR",
+      "type": "internal"
+    },
+    {
+      "id": 8,
+      "name": "James O'Connor",
+      "email": "james.oconnor@example.com",
+      "slack": "@jamesoconnor",
+      "department": "Finance",
+      "company": "Capital Solutions",
+      "type": "external"
+    },
+    {
+      "id": 9,
+      "name": "Sophia Patel",
+      "email": "sophia.patel@example.com",
+      "slack": "@sophiapatel",
+      "department": "Engineering",
+      "type": "internal"
+    },
+    {
+      "id": 10,
+      "name": "Carlos Rivera",
+      "email": "carlos.rivera@example.com",
+      "slack": "@carlosrivera",
+      "department": "Customer Support",
+      "company": "SupportPro",
+      "type": "external"
+    },
+    {
+      "id": 11,
+      "name": "Nina Williams",
+      "email": "nina.williams@example.com",
+      "slack": "@ninawilliams",
+      "department": "Legal",
+      "type": "internal"
+    },
+    {
+      "id": 12,
+      "name": "Omar Al-Farsi",
+      "email": "omar.alfarsi@example.com",
+      "slack": "@omaralfarsi",
+      "department": "Business Development",
+      "company": "Global Ventures",
+      "type": "external"
+    },
+    {
+      "id": 13,
+      "name": "Rebecca Klein",
+      "email": "rebecca.klein@example.com",
+      "slack": "@rebeccaklein",
+      "department": "Marketing",
+      "type": "internal"
+    },
+    {
+      "id": 14,
+      "name": "Samuel Carter",
+      "email": "samuel.carter@example.com",
+      "slack": "@samuelcarter",
+      "department": "IT",
+      "company": "TechSecure",
+      "type": "external"
+    },
+    {
+      "id": 15,
+      "name": "Aisha Gupta",
+      "email": "aisha.gupta@example.com",
+      "slack": "@aishagupta",
+      "department": "Sales",
+      "type": "internal"
+    }
+  ]
+}
