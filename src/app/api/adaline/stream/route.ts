@@ -44,27 +44,30 @@ export async function POST(req: Request) {
     const encoder = new TextEncoder();
     const readableStream = new ReadableStream({
       async start(controller) {
-        for await (const chunk of stream) {
-          const latestChunk = chunk.response.partialMessages[0].partialContent;
+        const previouslyStreamed: Partial<ToolCallResponseType> = {};
 
-          const previouslyStreamed: Partial<ToolCallResponseType> = {};
-          if (latestChunk.modality === "partial-tool-call") {
+        for await (const chunk of stream) {
+          const latest = chunk.response.partialMessages[0].partialContent;
+
+          if (latest.modality === "partial-tool-call") {
             const res: ToolCallResponseType = {
-              id: previouslyStreamed.id ? undefined : previouslyStreamed.id,
               type: "tool-call",
-              name: previouslyStreamed.name
-                ? undefined
-                : previouslyStreamed.name,
-              partialArguments: latestChunk.arguments,
+              id: previouslyStreamed.id !== undefined ? undefined : latest.id,
+              name:
+                previouslyStreamed.name !== undefined ? undefined : latest.name,
+              partialArguments: latest.arguments,
             };
+            previouslyStreamed.id = latest.id;
+            previouslyStreamed.name = latest.name;
+
             // send to client
             controller.enqueue(encoder.encode(JSON.stringify(res)));
           }
 
-          if (latestChunk.modality === "partial-text") {
+          if (latest.modality === "partial-text") {
             const res = JSON.stringify({
               type: "assistant",
-              partialContent: latestChunk.value || "",
+              partialContent: latest.value || "",
             } as AssistantResponseType);
 
             // send to client

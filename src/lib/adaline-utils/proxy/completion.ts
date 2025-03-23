@@ -48,8 +48,6 @@ export async function* readJSONStream(stream: AsyncIterable<string>) {
   let buffer = "";
   for await (const chunk of stream) {
     const { result, incomplete } = parseIncompleteJSON(buffer + chunk);
-    console.log(incomplete);
-    console.log(result);
     buffer = incomplete.join("");
     yield { result, incomplete };
   }
@@ -71,43 +69,60 @@ export function parseIncompleteJSON(input: string): {
   const result: object[] = [];
   const incomplete: string[] = [];
 
-  let depth = 0;
-  let currentStart = -1;
+  type StackEntry = { char: "{" | "["; index: number };
+  const stack: StackEntry[] = [];
+  let startIndex: number | null = null;
 
-  // Iterate over every character
+  let inString = false;
+  let escapeNext = false;
+
   for (let i = 0; i < input.length; i++) {
     const char = input[i];
 
-    if (char === "{") {
-      // If we're not already inside an object, mark the start index.
-      if (depth === 0) {
-        currentStart = i;
+    if (inString) {
+      if (escapeNext) {
+        escapeNext = false;
+      } else if (char === "\\") {
+        escapeNext = true;
+      } else if (char === '"') {
+        inString = false;
       }
-      depth++;
-    } else if (char === "}") {
-      depth--;
-      // When depth returns to zero, we have a complete object candidate.
-      if (depth === 0 && currentStart !== -1) {
-        const objStr = input.slice(currentStart, i + 1);
-        try {
-          // Use eval to parse the object literal.
-          const parsedObj = eval("(" + objStr + ")") as object;
-          result.push(parsedObj);
-          // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        } catch (e) {
-          // If parsing fails, consider the string as incomplete.
-          incomplete.push(objStr);
+      continue;
+    } else if (char === '"') {
+      inString = true;
+      continue;
+    }
+
+    if (char === "{" || char === "[") {
+      if (stack.length === 0) {
+        startIndex = i;
+      }
+      stack.push({ char, index: i });
+    } else if (char === "}" || char === "]") {
+      if (stack.length > 0) {
+        const last = stack[stack.length - 1];
+        if (
+          (last.char === "{" && char === "}") ||
+          (last.char === "[" && char === "]")
+        ) {
+          stack.pop();
+          if (stack.length === 0 && startIndex !== null) {
+            const jsonStr = input.slice(startIndex, i + 1);
+            try {
+              const parsed = JSON.parse(jsonStr) as object;
+              result.push(parsed);
+            } catch {
+              incomplete.push(jsonStr);
+            }
+            startIndex = null;
+          }
         }
-        // Reset start marker after processing a complete segment.
-        currentStart = -1;
       }
     }
   }
 
-  // If there's an unclosed object at the end, capture it.
-  if (depth > 0 && currentStart !== -1) {
-    const remaining = input.slice(currentStart);
-    // Trim whitespace to avoid adding empty strings.
+  if (startIndex !== null && stack.length > 0) {
+    const remaining = input.slice(startIndex);
     if (remaining.trim()) {
       incomplete.push(remaining);
     }

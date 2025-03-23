@@ -99,6 +99,7 @@ const AssistantPopUp = ({
           }
 
           if (data.type === "tool-call") {
+            console.log(data.name);
             // render loaded tool here
             setAssistantResponse((prev) => prev + data.partialArguments);
           }
