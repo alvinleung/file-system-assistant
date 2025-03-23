@@ -1,18 +1,21 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { AutoResizingTextarea } from "./auto-resizing-textarea";
 import { cn, mapSet } from "@/lib/utils";
-import { useAdalinePrompt } from "@/lib/use-adaline-prompt";
-import {
-  decipherStream,
-  fetchStreamedResponse,
-} from "@/lib/fetch-streamed-response";
+import { useAdalinePrompt } from "@/lib/adaline-utils/use-adaline-prompt";
 import { useVFS } from "./virtual-file-system/vfs-context";
 import { serializeNode } from "./virtual-file-system/vfs-serialization";
+import {
+  readJSONStream,
+  streamCompletion,
+} from "@/lib/adaline-utils/proxy/completion";
+import { ServerStreamResponse } from "@/lib/adaline-utils/proxy/types";
 
 function extractFileName(filePath: string): string {
   const pathParts = filePath.split("/");
   return pathParts[pathParts.length - 1];
 }
+
+import USER_INFO from "@/data/user-info.json";
 
 type AssistantStates = "streaming" | "ready";
 
@@ -33,7 +36,7 @@ const AssistantPopUp = ({
   const vfs = useVFS();
 
   const { prompt, isPromptLoading } = useAdalinePrompt(
-    "c5166aaa-dd75-40fc-bdbe-33407b8037cf"
+    "c5166aaa-dd75-40fc-bdbe-33407b8037cf",
   );
 
   useEffect(() => {
@@ -59,43 +62,50 @@ const AssistantPopUp = ({
       return;
     }
 
-    const variables: Record<string, string> = {
+    const variablesInput: Record<string, string> = {
       user_query: userQuery,
       selected_files: JSON.stringify([...selectedFiles]),
       systemFiles: JSON.stringify(serializeNode(vfs.getDirectory(""))),
+      user_info: JSON.stringify(USER_INFO),
     };
 
-    let systemMessageContent = prompt.messages[0].content[0].value;
-    for (const key in variables) {
-      systemMessageContent = systemMessageContent.replaceAll(
-        `{${key}}`,
-        variables[key]
-      );
-    }
-
     setAssistantState("streaming");
-
     setAssistantResponse("");
 
-    //TODO: perform generation here
-    let allChunks = "";
-    fetchStreamedResponse(systemMessageContent, prompt, (chunk, done) => {
-      if (done) {
-        setAssistantState("ready");
-      }
-
-      allChunks += chunk;
-      const loaded = decipherStream(allChunks);
-
-      if (loaded.type === "assistant") {
-        setAssistantResponse(loaded.content);
-      }
-
-      if (loaded.type === "tool") {
-        // render loaded tool here
-        setAssistantResponse(loaded.content);
-      }
+    // replace values in prompt
+    prompt.variables.forEach((variable) => {
+      variable.value.value = variablesInput[variable.name];
     });
+
+    (async function () {
+      const stream = streamCompletion({
+        prompt,
+      });
+
+      // Process each chunk as it arrives
+      for await (const jsonChunk of readJSONStream(stream)) {
+        // parse each json chunk, sometimes, there could be more than one chunk
+        jsonChunk.result.forEach((json) => {
+          const { data, error } = ServerStreamResponse.safeParse(json);
+          if (error) {
+            console.warn(error.message);
+            console.log(json);
+            return;
+          }
+
+          // Update UI with the new chunk here
+          if (data.type === "assistant") {
+            setAssistantResponse((prev) => prev + data.partialContent);
+          }
+
+          if (data.type === "tool-call") {
+            // render loaded tool here
+            setAssistantResponse((prev) => prev + data.partialArguments);
+          }
+        });
+      }
+      setAssistantState("ready");
+    })();
   }, [isPromptLoading, prompt, userQuery, selectedFiles, vfs]);
 
   return (
@@ -104,7 +114,7 @@ const AssistantPopUp = ({
         <div
           className={cn(
             "relative min-h-10 border rounded-lg px-2 bg-white ",
-            isPromptEmpty ? "border-transparent" : "border-zinc-200 shadow-xs"
+            isPromptEmpty ? "border-transparent" : "border-zinc-200 shadow-xs",
           )}
           style={{
             // top: `${lastClickedIndex * 32 + 48}px`,

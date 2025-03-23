@@ -17,25 +17,30 @@ export type AdalineTool = {
     };
   };
 };
+
+export type AdalineMessage = {
+  role: "assistant" | "user" | "system";
+  content: Array<{
+    modality: string;
+    value: string;
+  }>;
+};
+
+export type AdalineVariable = {
+  name: string;
+  value: {
+    modality: string;
+    value: string;
+  };
+};
+
 export type AdalinePromptType = {
   config: {
     provider: string;
     model: string;
     settings: Record<string, unknown>;
   };
-  messages: Array<{
-    role: string;
-    content: Array<{
-      modality: string;
-      value: string;
-    }>;
-  }>;
+  messages: Array<AdalineMessage>;
   tools: Array<AdalineTool>;
-  variables: Array<{
-    name: string;
-    value: {
-      modality: string;
-      value: string;
-    };
-  }>;
+  variables: Array<AdalineVariable>;
 };
